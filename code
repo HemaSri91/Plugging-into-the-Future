@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plugging into the Future | Electricity Consumption Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--dark);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .viz-container {
+            min-height: 600px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+
+        @media(max-width:768px){
+            .viz-container{
+                min-height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between h-16 items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-bolt text-indigo-600 text-2xl"></i>
+                <span class="text-xl font-semibold">Energy Analytics</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-indigo-600">Home</a>
+                <a href="#visualizations" class="hover:text-indigo-600">Dashboard</a>
+                <a href="#scenarios" class="hover:text-indigo-600">Scenarios</a>
+                <a href="#methodology" class="hover:text-indigo-600">Methodology</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero-gradient text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 md:flex items-center justify-between">
+        <div class="md:w-1/2">
+            <h1 class="text-4xl md:text-5xl font-bold">
+                Plugging into the Future
+            </h1>
+            <p class="mt-6 text-lg text-indigo-100">
+                An interactive Tableau dashboard analyzing electricity consumption patterns
+                across regions, sectors, and seasons to support smart energy planning.
+            </p>
+            <a href="#visualizations"
+               class="mt-8 inline-block bg-white text-indigo-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+               Explore Dashboard
+            </a>
+        </div>
+        <div class="md:w-1/2 mt-10 md:mt-0">
+            <div class="card p-6 bg-white bg-opacity-10 backdrop-blur-md">
+                <h3 class="text-xl font-semibold mb-4">Project Objectives</h3>
+                <ul class="space-y-3">
+                    <li><i class="fas fa-clock mr-2"></i>Identify Peak & Off-Peak Demand</li>
+                    <li><i class="fas fa-calendar mr-2"></i>Analyze Seasonal Variations</li>
+                    <li><i class="fas fa-industry mr-2"></i>Compare Sector Usage</li>
+                    <li><i class="fas fa-chart-line mr-2"></i>Forecast Future Demand</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dashboard Section -->
+<section id="visualizations" class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-10 text-center">Interactive Tableau Dashboard</h2>
+
+    <div class="viz-container card p-4">
+
+        <!-- 🔁 REPLACE THIS IFRAME WITH YOUR TABLEAU PUBLIC LINK -->
+        <iframe 
+            src="https://public.tableau.com/views/YOUR_DASHBOARD_LINK"
+            width="100%" 
+            height="600"
+            frameborder="0">
+        </iframe>
+
+    </div>
+</section>
+
+<!-- Scenarios -->
+<section id="scenarios" class="bg-gray-100 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Project Scenarios</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="card p-6">
+                <h3 class="text-xl font-semibold text-indigo-600 mb-4">
+                    Time-of-Day Usage
+                </h3>
+                <p>
+                    Analyze hourly electricity trends to identify peak demand hours.
+                    Enables time-of-use pricing and better grid load balancing.
+                </p>
+            </div>
+
+            <div class="card p-6">
+                <h3 class="text-xl font-semibold text-emerald-600 mb-4">
+                    Seasonal Variations
+                </h3>
+                <p>
+                    Study consumption changes across months and seasons to
+                    prepare for demand spikes and optimize renewable energy.
+                </p>
+            </div>
+
+            <div class="card p-6">
+                <h3 class="text-xl font-semibold text-purple-600 mb-4">
+                    Sector Analysis
+                </h3>
+                <p>
+                    Compare residential, commercial, and industrial usage
+                    to design targeted energy efficiency strategies.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Methodology -->
+<section id="methodology" class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-12 text-center">Methodology</h2>
+
+    <div class="card p-8 space-y-6">
+        <div>
+            <h4 class="font-semibold text-lg">1️⃣ Data Collection</h4>
+            <p>Imported Consumption.csv dataset into Tableau.</p>
+        </div>
+        <div>
+            <h4 class="font-semibold text-lg">2️⃣ Data Preparation</h4>
+            <p>Cleaned date fields, created calculated fields, and formatted measures.</p>
+        </div>
+        <div>
+            <h4 class="font-semibold text-lg">3️⃣ Visualization</h4>
+            <p>Built line charts, heatmaps, bar charts, and forecasting models.</p>
+        </div>
+        <div>
+            <h4 class="font-semibold text-lg">4️⃣ Dashboard Integration</h4>
+            <p>Combined worksheets into interactive dashboards with filters.</p>
+        </div>
+        <div>
+            <h4 class="font-semibold text-lg">5️⃣ Insight Generation</h4>
+            <p>Derived strategic recommendations for energy optimization.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-6 text-center">
+    <p>© 2026 Electricity Consumption Analysis | Built with Tableau & GitHub Pages</p>
+</footer>
+
+</body>
+</html>
